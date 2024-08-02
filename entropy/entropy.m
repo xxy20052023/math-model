@@ -1,0 +1,9 @@
+%熵权法
+x=input('请输入矩阵');
+[m,n]=size(x);
+x=x./repmat(sum(x.^2).^0.5,m,1);%标准化
+x=x./repmat(sum(x),m,1);%归一化
+E=sum(x.*myLog(x))/(-log(m));
+E=1-E;
+E=E/sum(E);
+disp(E);
